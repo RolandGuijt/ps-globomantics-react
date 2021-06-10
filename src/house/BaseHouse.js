@@ -17,10 +17,7 @@ const BaseHouse = ({ house }) => {
       </div>
       <div className="row">
         <div className="col-md-7">
-          <img
-            src={`https://images.pexels.com/photos/${house.photo}/pexels-photo-${house.photo}.jpeg?w=600&h=400&auto=compress&cs=tinysrgb`}
-            alt="House"
-          />
+          <img src={`/images/${house.photo}.jpeg`} alt="House" />
         </div>
         <div className="col-md-5">
           <p className="price">${house.price}</p>
