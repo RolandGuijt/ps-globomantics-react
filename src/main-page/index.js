@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import "./main-page.css";
 import Header from "./header";
 import FeaturedHouse from "./featured-house";
