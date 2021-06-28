@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import "./main-page.css";
 import Header from "./header";
 import FeaturedHouse from "./featured-house";
@@ -20,18 +20,12 @@ function App() {
     fetchHouses();
   }, []);
 
-  // const featuredHouse = useMemo(() => {
-  //   if (allHouses.length) {
-  //     const randomIndex = Math.floor(Math.random() * allHouses.length);
-  //     return allHouses[randomIndex];
-  //   }
-  // }, [allHouses]);
-
-  let featuredHouse = {};
-  if (allHouses.length) {
-    const randomIndex = Math.floor(Math.random() * allHouses.length);
-    featuredHouse = allHouses[randomIndex];
-  }
+  const featuredHouse = useMemo(() => {
+    if (allHouses.length) {
+      const randomIndex = Math.floor(Math.random() * allHouses.length);
+      return allHouses[randomIndex];
+    }
+  }, [allHouses]);
 
   return (
     <Router>
