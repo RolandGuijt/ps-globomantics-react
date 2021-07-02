@@ -1,8 +1,11 @@
 import SearchResultsRow from "./search-results-row";
 import { useParams } from "react-router-dom";
+import HousesContext from "../context/housesContext";
+import { useContext } from "react";
 
-const SearchResults = ({ allHouses }) => {
+const SearchResults = () => {
   const { country } = useParams();
+  const allHouses = useContext(HousesContext);
   const filteredHouses = allHouses.filter((h) => h.country === country);
 
   return (
